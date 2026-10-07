@@ -319,8 +319,8 @@ def generate_downstream_file() -> None:
     # FUTURE: also use MSC classification?
     # Write out a new yaml file for this, again.
     sorted_thms = sorted(theorems, key=lambda t: (int(t.wikidata[1:]), t.id_suffix or ''))
-    file_content = "\n".join(_write_entry_for_downstream(thm) for thm in sorted_thms)
-    OUTPUT_FILEPATH.write_text(file_content)
+    file_contents = "\n".join(_write_entry_for_downstream(thm) for thm in sorted_thms)
+    OUTPUT_FILEPATH.write_text(file_contents)
 
 # Update this repository's data about Lean formalisations with the contents
 # in a yaml file |input_file|.
